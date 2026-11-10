@@ -1,0 +1,49 @@
+# TFE Organization Configuration
+organization_name  = "your-tfe-org-here"
+organization_email = "your-tfe-email-here"
+
+# Set via environment variable: export TF_VAR_tfe_token="your-tfe-token-here"
+tfe_token = "your-tfe-token-here"
+tfe_hostname = "app.terraform.io" # HCP Terraform FQDN (use your TFE FQDN if self-hosted)
+
+# Azure DevOps VCS Configuration
+vcs_oauth_token_id = "your-vcs-manually-created-oauth-token-id-here"
+vcs_https_url      = "your-azure-devops-https-url-here"
+vcs_api_url       = "your-azure-devops-api-url-here"
+vcs_organization  = "your-azure-devops-org-here"
+vcs_project       = "your-azure-devops-proj-here"
+vcs_repository_management    = "tfe-management"  
+vcs_repository_private_registry = "tfe-private-registry"
+
+# Azure Service Principal configuration
+az_subscription_id = "your-az-subscription-id-here"
+az_tenant_id       = "your-az-tenant-id-here"
+az_client_id       = "your-service-principal-client-id-here"
+az_client_secret   = "your-service-principal-client-secret-here"
+
+# Azure Communication Services (SMTP). The resource group must already exist
+resource_group_name     = "your-resource-group-here"
+smtp_username           = "your-smtp-username-here"
+smtp_test_email_address = "your-test-email-address-here"
+
+# Workspace Configuration
+vcs_branch         = "main"
+terraform_version  = "1.5.0"
+auto_apply         = false  # Set to true for automatic applies (not recommended for production)
+working_directory  = ""     # Leave empty if Terraform files are in repository root
+
+# Optional: Notification Configuration
+# Uncomment and configure if you want Slack/email notifications
+# notification_configurations = {
+#   slack = {
+#     destination_type = "slack"
+#     url              = "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+#     triggers         = ["run:errored", "run:completed", "run:needs_attention"]
+#   }
+# }
+
+ssh_private_key = <<EOT
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+EOT
