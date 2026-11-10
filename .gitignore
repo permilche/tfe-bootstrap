@@ -1,0 +1,6 @@
+.bob/
+*.tfvars
+.terraform/
+.terraform*
+*.tfstate*
+backend.hcl
